@@ -1,0 +1,98 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {iaParam1Changed = id; }; 
+            CLASS = CocoaView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {uiParam1Slider = NSSlider; uiParam1TextField = NSTextField; }; 
+            SUPERCLASS = NSView; 
+        }, 
+        {
+            CLASS = CocoaViewFactory; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {uiFreshlyLoadedView = "bassAmp_CocoaView"; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = NSLevelIndicator; LANGUAGE = ObjC; SUPERCLASS = NSControl; }, 
+        {CLASS = NSSegmentedControl; LANGUAGE = ObjC; SUPERCLASS = NSControl; }, 
+        {
+            ACTIONS = {
+                displayLimiterGR = id; 
+                endRegistrationWindow = id; 
+                iaOnStatus = id; 
+                iaParam10Changed = id; 
+                iaParam11Changed = id; 
+                iaParam12Changed = id; 
+                iaParam13Changed = id; 
+                iaParam14Changed = id; 
+                iaParam15Changed = id; 
+                iaParam1Changed = id; 
+                iaParam2Changed = id; 
+                iaParam3Changed = id; 
+                iaParam4Changed = id; 
+                iaParam5Changed = id; 
+                iaParam6Changed = id; 
+                iaParam7Changed = id; 
+                iaParam8Changed = id; 
+                iaParam9Changed = id; 
+                openPrimoSite = id; 
+                openRegistrationSite = id; 
+                serialNumberEntry = id; 
+                unloadApp = id; 
+            }; 
+            CLASS = "bassAmp_CocoaView"; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                butQuit = NSButton; 
+                imgView = NSImageView; 
+                regCustomSheet = NSWindow; 
+                regLater = NSButton; 
+                regNumberField = NSTextField; 
+                remainingEvaluationTime = NSTextField; 
+                uiBypassButton = NSButton; 
+                uiCabinetSelector = NSStepper; 
+                uiLimiterMeter = NSLevelIndicator; 
+                uiParam10knob = NSView; 
+                uiParam11knob = NSView; 
+                uiParam12knob = NSView; 
+                uiParam13knob = NSView; 
+                uiParam14knob = NSView; 
+                uiParam1TextField = NSTextField; 
+                uiParam1knob = NSView; 
+                uiParam2TextField = NSTextField; 
+                uiParam2knob = NSView; 
+                uiParam3knob = NSView; 
+                uiParam4knob = NSView; 
+                uiParam5knob = NSView; 
+                uiParam6knob = NSView; 
+                uiParam7SliderKnob = NSView; 
+                uiParam8SliderKnob = NSView; 
+                uiParam9SliderKnob = NSView; 
+            }; 
+            SUPERCLASS = NSView; 
+        }, 
+        {CLASS = "bassAmp_CocoaViewFactory"; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {setAngle = id; }; 
+            CLASS = knobView; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSView; 
+        }, 
+        {
+            ACTIONS = {setAngle = id; }; 
+            CLASS = "pm_AudioKnob2"; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {target = id; }; 
+            SUPERCLASS = NSView; 
+        }, 
+        {
+            ACTIONS = {setAngle = id; }; 
+            CLASS = "pm_SliderKnob"; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {target = id; }; 
+            SUPERCLASS = NSView; 
+        }
+    ); 
+    IBVersion = 1; 
+}

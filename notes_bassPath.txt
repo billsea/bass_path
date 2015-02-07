@@ -1,0 +1,33 @@
+Notes:
+
+// General 
+
+- Uses modified versions of some existing source code for the limiter, overdrive, and cabinet simulation functions. The UI implements the custom control palette (audioControls framework) for the interface. see below for information on how this works. This is the most important, and confusing, part of the project.
+
+
+
+- ////////// custom control framework and palettes //////
+-Uses  custom palette of controls. this framework is called audioControls.framework, and is referenced from the current users Library->Frameworks directory. 
+
+ - Using the custom knobs 
+the custom audio knobs, with minimum, maximum, and default setting.
+Notes: images must be referenced by bundle(see load image in init function). the A Framework must also be created for the source classes, when using the custom control, and referenced by the host application. 
+- check the plist files, and cofirm the "CFBundleIdentifier" settings. ONE Important note...the framework plist CFBundleIdentifier string must match this one for referencing images. Was a bit tricky referencing images from project to project. - WES 11/21/2006
+
+
+-- -  Steps to create custom control 
+- Create a new view project, and add images, actions, targets, etc. (knobView in this case)
+
+- Palletize the custom view(create a new pallet project)(AudioControls in this case)
+
+- Make sure all image files, plists, etc are referenced correctly(this is a pain in the ass!)
+	
+- Create a framework for the source custom view files(audioControls in this case) this framework, and directory, are installed in the user machine during the installation process with package manager. 
+
+
+
+
+-  ///////// Registration functions ///////////
+	Evaluation and registration methods are located in the bassAmp_CocoaView class, and write info to a .plist file.(rcLic.plist I believe). Password verification is contained in these methods as well.
+
+

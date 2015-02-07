@@ -1,0 +1,76 @@
+TCocoaUI
+v7
+r1
+cCheck dependencies
+
+N/Users/bill/Cocoa_Development/AudioUnits/bassAmp/CocoaView.nib
+c0000000045AE86BC00000000000000CC
+t1169065660
+s204
+
+N/Users/bill/Cocoa_Development/AudioUnits/bassAmp/brushedMetal.tif
+c00000000455F88E000000000000546A4
+t1163888864
+s345764
+
+N/Users/bill/Cocoa_Development/AudioUnits/bassAmp/brushedMetal_red.gif
+c0000000045A036DC00000000000111E5
+t1168127708
+s70117
+
+N/Users/bill/Cocoa_Development/AudioUnits/bassAmp/build/Deployment/CocoaViewFactory.bundle
+t1169745492
+s102
+
+N/Users/bill/Cocoa_Development/AudioUnits/bassAmp/build/Deployment/CocoaViewFactory.bundle/Contents/Info.plist
+t1169745475
+s526
+
+N/Users/bill/Cocoa_Development/AudioUnits/bassAmp/build/Deployment/CocoaViewFactory.bundle/Contents/Resources/CocoaView.nib
+t1169745475
+s204
+
+N/Users/bill/Cocoa_Development/AudioUnits/bassAmp/build/Deployment/CocoaViewFactory.bundle/Contents/Resources/brushedMetal.tif
+t1169745475
+s345764
+
+N/Users/bill/Cocoa_Development/AudioUnits/bassAmp/build/Deployment/CocoaViewFactory.bundle/Contents/Resources/brushedMetal_red.gif
+t1169745475
+s70117
+
+N/Users/bill/Cocoa_Development/AudioUnits/bassAmp/build/Deployment/CocoaViewFactory.bundle/Contents/Resources/rgLic.plist
+t1169745475
+s276
+
+N/Users/bill/Cocoa_Development/AudioUnits/bassAmp/rgLic.plist
+c0000000045AADD200000000000000114
+t1168825632
+s276
+
+NCocoaViewFactory.plist
+c0000000045108B79000000000000020E
+t1158712185
+s526
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies295853803#295853803#0(86"[BEROR]error: There is no SDK with the name or path '/Developer/SDKs/MacOSX10.4u.sdk'1(4@78"error: There is no SDK with the name or path '/Developer/SDKs/MacOSX10.4u.sdk'295853803#18446744073709551615#0#0(1@0"0(0#1#0"4300885448#0"0#
+
+CCopyPlistFile /Users/bill/Cocoa_Development/AudioUnits/bassAmp/build/Deployment/CocoaViewFactory.bundle/Contents/Resources/rgLic.plist rgLic.plist
+r0
+
+CCopyTiffFile /Users/bill/Cocoa_Development/AudioUnits/bassAmp/build/Deployment/CocoaViewFactory.bundle/Contents/Resources/brushedMetal.tif brushedMetal.tif
+r0
+
+CCpResource build/Deployment/CocoaViewFactory.bundle/Contents/Resources/brushedMetal_red.gif brushedMetal_red.gif
+r0
+
+CProcessInfoPlistFile /Users/bill/Cocoa_Development/AudioUnits/bassAmp/build/Deployment/CocoaViewFactory.bundle/Contents/Info.plist CocoaViewFactory.plist
+r0
+
+CStripNIB /Users/bill/Cocoa_Development/AudioUnits/bassAmp/CocoaView.nib
+r0
+
+CTouch /Users/bill/Cocoa_Development/AudioUnits/bassAmp/build/Deployment/CocoaViewFactory.bundle
+r0
+
