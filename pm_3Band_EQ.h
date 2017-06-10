@@ -6,32 +6,31 @@
  *  Copyright 2006 __MyCompanyName__. All rights reserved.
  *
  How to use ...
- 
+
  1. First you need to declare a state for your eq
- 
+
  EQSTATE eq;
- 
+
  2. Now initialise the state (we'll assume your output frequency is 48Khz)
- 
+
  set_3band_state(eq,880,5000,480000);
- 
+
  Your EQ bands are now as follows (approximatley!)
- 
+
  low band = 0Hz to 880Hz
  mid band = 880Hz to 5000Hz
  high band = 5000Hz to 24000Hz
- 
+
  3. Set the gains to some values ...
- 
+
  eq.lg = 1.5; // Boost bass by 50%
  eq.mg = 0.75; // Cut mid by 25%
- eq.hg = 1.0; // Leave high band alone 
- 
+ eq.hg = 1.0; // Leave high band alone
+
  4. You can now EQ some samples
- 
+
  out_sample = do_3band(eq,in_sample)
  */
-
 
 #ifndef __pm_3Band_EQ__
 #define __pm_3Band_EQ__

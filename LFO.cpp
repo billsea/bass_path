@@ -1,9 +1,9 @@
 //============================================================================
 /**
-	Implementation file for LFO.hpp
-	
-	@author		Remy Muller
-	@date		20030822
+        Implementation file for LFO.hpp
+
+        @author		Remy Muller
+        @date		20030822
 */
 //============================================================================
 

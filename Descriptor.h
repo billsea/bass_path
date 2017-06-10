@@ -1,40 +1,40 @@
 /*
-	Descriptor.h
-	
-	Copyright 2004-5 Tim Goetze <tim@quitte.de>
-	
-	http://quitte.de/dsp/
+        Descriptor.h
 
-	creating a LADSPA_Descriptor for a caps plugin via a C++ template,
-	saves us a virtual function call compared to the usual method used
-	for C++ plugins in a C context.
+        Copyright 2004-5 Tim Goetze <tim@quitte.de>
 
-	Descriptor<P> expects P to declare some common methods, like init(),
-	activate() etc, plus a static port_info[] and LADSPA_Data * ports[]
-	and of course 'adding_gain'.
-	
-	maintaining both port_info[] and ports[] is a bit of a bitch, but,
-	hey, "you only do it once (tm)" .. and then you do it over and over
-	again. particularly bothersome is also the necessary unrolling of our
-	PortInfo array to fit into LADSPA_Descriptor's inconsequential way of 
-	port data structuring, which results in quite a bit of memory holding 
-	duplicated data. oh well.
+        http://quitte.de/dsp/
+
+        creating a LADSPA_Descriptor for a caps plugin via a C++ template,
+        saves us a virtual function call compared to the usual method used
+        for C++ plugins in a C context.
+
+        Descriptor<P> expects P to declare some common methods, like init(),
+        activate() etc, plus a static port_info[] and LADSPA_Data * ports[]
+        and of course 'adding_gain'.
+
+        maintaining both port_info[] and ports[] is a bit of a bitch, but,
+        hey, "you only do it once (tm)" .. and then you do it over and over
+        again. particularly bothersome is also the necessary unrolling of our
+        PortInfo array to fit into LADSPA_Descriptor's inconsequential way of
+        port data structuring, which results in quite a bit of memory holding
+        duplicated data. oh well.
 */
 /*
-	This program is free software; you can redistribute it and/or
-	modify it under the terms of the GNU General Public License
-	as published by the Free Software Foundation; either version 2
-	of the License, or (at your option) any later version.
+        This program is free software; you can redistribute it and/or
+        modify it under the terms of the GNU General Public License
+        as published by the Free Software Foundation; either version 2
+        of the License, or (at your option) any later version.
 
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
+        This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        GNU General Public License for more details.
 
-	You should have received a copy of the GNU General Public License
-	along with this program; if not, write to the Free Software
-	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
-	02111-1307, USA or point your web browser to http://www.gnu.org.
+        You should have received a copy of the GNU General Public License
+        along with this program; if not, write to the Free Software
+        Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+        02111-1307, USA or point your web browser to http://www.gnu.org.
 */
 
 #ifndef _DESCRIPTOR_H_
