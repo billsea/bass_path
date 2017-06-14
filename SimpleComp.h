@@ -35,74 +35,70 @@
 #ifndef __SIMPLE_COMP_H__
 #define __SIMPLE_COMP_H__
 
-#include "SimpleHeader.h"		// common header
-#include "SimpleEnvelope.h"		// for base class
-#include "SimpleGain.h"			// for gain functions
+#include "SimpleHeader.h"   // common header
+#include "SimpleEnvelope.h" // for base class
+#include "SimpleGain.h"     // for gain functions
 
-namespace chunkware_simple
-{
-	//-------------------------------------------------------------
-	// simple compressor
-	//-------------------------------------------------------------
-	class SimpleComp : public AttRelEnvelope
-	{
-	public:
-		SimpleComp();
-		virtual ~SimpleComp() {}
+namespace chunkware_simple {
+//-------------------------------------------------------------
+// simple compressor
+//-------------------------------------------------------------
+class SimpleComp : public AttRelEnvelope {
+public:
+  SimpleComp();
+  virtual ~SimpleComp() {}
 
-		// parameters
-		virtual void setThresh( double dB );
-		virtual void setRatio( double dB );
+  // parameters
+  virtual void setThresh(double dB);
+  virtual void setRatio(double dB);
 
-		virtual double getThresh( void ) const { return threshdB_; }
-		virtual double getRatio( void )  const { return ratio_; }
+  virtual double getThresh(void) const { return threshdB_; }
+  virtual double getRatio(void) const { return ratio_; }
 
-		// runtime
-		virtual void initRuntime( void );			// call before runtime (in resume())
-		void process( double &in1, double &in2 );	// compressor runtime process
-		void process( double &in1, double &in2, double keyLinked );	// with stereo-linked key in
+  // runtime
+  virtual void initRuntime(void);         // call before runtime (in resume())
+  void process(double &in1, double &in2); // compressor runtime process
+  void process(double &in1, double &in2,
+               double keyLinked); // with stereo-linked key in
 
-	private:
+private:
+  // transfer function
+  double threshdB_; // threshold (dB)
+  double ratio_;    // ratio (compression: < 1 ; expansion: > 1)
 
-		// transfer function
-		double threshdB_;		// threshold (dB)
-		double ratio_;			// ratio (compression: < 1 ; expansion: > 1)
+  // runtime variables
+  double envdB_; // over-threshold envelope (dB)
 
-		// runtime variables
-		double envdB_;			// over-threshold envelope (dB)
+}; // end SimpleComp class
 
-	};	// end SimpleComp class
+//-------------------------------------------------------------
+// simple compressor with RMS detection
+//-------------------------------------------------------------
+class SimpleCompRms : public SimpleComp {
+public:
+  SimpleCompRms();
+  virtual ~SimpleCompRms() {}
 
-	//-------------------------------------------------------------
-	// simple compressor with RMS detection
-	//-------------------------------------------------------------
-	class SimpleCompRms : public SimpleComp
-	{
-	public:
-		SimpleCompRms();
-		virtual ~SimpleCompRms() {}
+  // sample rate
+  virtual void setSampleRate(double sampleRate);
 
-		// sample rate
-		virtual void setSampleRate( double sampleRate );
+  // RMS window
+  virtual void setWindow(double ms);
+  virtual double getWindow(void) const { return ave_.getTc(); }
 
-		// RMS window
-		virtual void setWindow( double ms );
-		virtual double getWindow( void ) const { return ave_.getTc(); }
+  // runtime process
+  virtual void initRuntime(void);         // call before runtime (in resume())
+  void process(double &in1, double &in2); // compressor runtime process
 
-		// runtime process
-		virtual void initRuntime( void );			// call before runtime (in resume())
-		void process( double &in1, double &in2 );	// compressor runtime process
+private:
+  EnvelopeDetector ave_; // averager
+  double aveOfSqrs_;     // average of squares
 
-	private:
+}; // end SimpleCompRms class
 
-		EnvelopeDetector ave_;	// averager
-		double aveOfSqrs_;		// average of squares
-
-	};	// end SimpleCompRms class
-
-}	// end namespace chunkware_simple
+} // end namespace chunkware_simple
 
 // include inlined process function
 #include "SimpleCompProcess.inl"
 
-#endif	// end __SIMPLE_COMP_H__
+#endif // end __SIMPLE_COMP_H__

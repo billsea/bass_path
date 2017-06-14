@@ -1,12 +1,12 @@
 /*
 *	File:		CocoaView.h
-  *	
+  *
   *	Version:	1.0
-  * 
+  *
   *	Created:	11/22/2006
-  *	
+  *
   *	Copyright:  Copyright © 2006 primo-media.com, All Rights Reserved
-  * 
+  *
   *
 */
 

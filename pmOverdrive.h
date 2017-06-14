@@ -28,18 +28,14 @@ public:
 	void Distort(Float32 &in1, float amount);
 	void Overdrive(Float32 &in1, float amount);
 	void setSampleRate(float sampRate);
-	
-	//virtual void Reset() {}
+    
 protected:
 	int m_SampleRate;
 	float mLastCutoff_F1;
 	float mLastResonance_F1;
 	pm_HiPassFilter hpFilter;
 	TwelveAX7 tube;
-	
 	Float32 hp_filter(Float32 input, Float32 trebCor, Float32 cutBoost);
 };
-
-
 
 #endif

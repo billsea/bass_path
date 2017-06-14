@@ -10,36 +10,30 @@
  *
  */
 
-namespace primoHPFilter
-{
+namespace primoHPFilter {
 
-class pm_HiPassFilter
-{
+class pm_HiPassFilter {
 public:
-	pm_HiPassFilter();
-	
-	void CalculateHipassParams(	double inFreq, double inResonance );
-	float processInput(Float32 input);
-	void reset();
-	
-//properties
+  pm_HiPassFilter();
 
-	private:
-		
-	//highpass filter coefficients
-	double 	Hp_a1;
-	double	Hp_a2;
-	double	Hp_a3;
-	double	Hp_b1;
-	double	Hp_b2;
-	
-	// filter state
-	
-	double	mX1; 
-	double	mX2;
-	double	mY1;
-	double	mY2;
-	
+  void CalculateHipassParams(double inFreq, double inResonance);
+  float processInput(Float32 input);
+  void reset();
+
+private:
+  // highpass filter coefficients
+  double Hp_a1;
+  double Hp_a2;
+  double Hp_a3;
+  double Hp_b1;
+  double Hp_b2;
+
+  // filter state
+
+  double mX1;
+  double mX2;
+  double mY1;
+  double mY2;
 };
 }
-#endif	// end __SIMPLE_LIMIT_H__
+#endif // end __SIMPLE_LIMIT_H__

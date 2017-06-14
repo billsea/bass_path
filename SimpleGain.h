@@ -35,26 +35,27 @@
 #ifndef __SIMPLE_GAIN_H__
 #define __SIMPLE_GAIN_H__
 
-#include "SimpleHeader.h"		// common header
+#include "SimpleHeader.h" // common header
 
-namespace chunkware_simple
-{
-	//-------------------------------------------------------------
-	// gain functions
-	//-------------------------------------------------------------
+namespace chunkware_simple {
+//-------------------------------------------------------------
+// gain functions
+//-------------------------------------------------------------
 
-	// linear -> dB conversion
-	static INLINE double lin2dB( double lin ) {
-		static const double LOG_2_DB = 8.6858896380650365530225783783321;	// 20 / ln( 10 )
-		return log( lin ) * LOG_2_DB;
-	}
+// linear -> dB conversion
+static INLINE double lin2dB(double lin) {
+  static const double LOG_2_DB =
+      8.6858896380650365530225783783321; // 20 / ln( 10 )
+  return log(lin) * LOG_2_DB;
+}
 
-	// dB -> linear conversion
-	static INLINE double dB2lin( double dB ) {
-		static const double DB_2_LOG = 0.11512925464970228420089957273422;	// ln( 10 ) / 20
-		return exp( dB * DB_2_LOG );
-	}
+// dB -> linear conversion
+static INLINE double dB2lin(double dB) {
+  static const double DB_2_LOG =
+      0.11512925464970228420089957273422; // ln( 10 ) / 20
+  return exp(dB * DB_2_LOG);
+}
 
-}	// end namespace chunkware_simple
+} // end namespace chunkware_simple
 
-#endif	// end __SIMPLE_GAIN_H__
+#endif // end __SIMPLE_GAIN_H__

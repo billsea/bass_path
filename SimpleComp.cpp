@@ -34,65 +34,44 @@
 
 #include "SimpleComp.h"
 
-namespace chunkware_simple
-{
-	//-------------------------------------------------------------
-	// simple compressor
-	//-------------------------------------------------------------
-	SimpleComp::SimpleComp()
-		: AttRelEnvelope( 10.0, 100.0 )
-		, threshdB_( 0.0 )
-		, ratio_( 1.0 )
-		, envdB_( DC_OFFSET )
-	{
-	}
+namespace chunkware_simple {
+//-------------------------------------------------------------
+// simple compressor
+//-------------------------------------------------------------
+SimpleComp::SimpleComp()
+    : AttRelEnvelope(10.0, 100.0), threshdB_(0.0), ratio_(1.0),
+      envdB_(DC_OFFSET) {}
 
-	//-------------------------------------------------------------
-	void SimpleComp::setThresh( double dB )
-	{
-		threshdB_ = dB;
-	}
+//-------------------------------------------------------------
+void SimpleComp::setThresh(double dB) { threshdB_ = dB; }
 
-	//-------------------------------------------------------------
-	void SimpleComp::setRatio( double ratio )
-	{
-		assert( ratio > 0.0 );
-		ratio_ = ratio;
-	}
+//-------------------------------------------------------------
+void SimpleComp::setRatio(double ratio) {
+  assert(ratio > 0.0);
+  ratio_ = ratio;
+}
 
-	//-------------------------------------------------------------
-	void SimpleComp::initRuntime( void )
-	{
-		envdB_ = DC_OFFSET;
-	}
+//-------------------------------------------------------------
+void SimpleComp::initRuntime(void) { envdB_ = DC_OFFSET; }
 
-	//-------------------------------------------------------------
-	// simple compressor with RMS detection
-	//-------------------------------------------------------------
-	SimpleCompRms::SimpleCompRms()
-		: ave_( 5.0 )
-		, aveOfSqrs_( DC_OFFSET )
-	{
-	}
+//-------------------------------------------------------------
+// simple compressor with RMS detection
+//-------------------------------------------------------------
+SimpleCompRms::SimpleCompRms() : ave_(5.0), aveOfSqrs_(DC_OFFSET) {}
 
-	//-------------------------------------------------------------
-	void SimpleCompRms::setSampleRate( double sampleRate )
-	{
-		SimpleComp::setSampleRate( sampleRate );
-		ave_.setSampleRate( sampleRate );
-	}
+//-------------------------------------------------------------
+void SimpleCompRms::setSampleRate(double sampleRate) {
+  SimpleComp::setSampleRate(sampleRate);
+  ave_.setSampleRate(sampleRate);
+}
 
-	//-------------------------------------------------------------
-	void SimpleCompRms::setWindow( double ms )
-	{
-		ave_.setTc( ms );
-	}
+//-------------------------------------------------------------
+void SimpleCompRms::setWindow(double ms) { ave_.setTc(ms); }
 
-	//-------------------------------------------------------------
-	void SimpleCompRms::initRuntime( void )
-	{
-		SimpleComp::initRuntime();
-		aveOfSqrs_ = DC_OFFSET;
-	}
+//-------------------------------------------------------------
+void SimpleCompRms::initRuntime(void) {
+  SimpleComp::initRuntime();
+  aveOfSqrs_ = DC_OFFSET;
+}
 
-}	// end namespace chunkware_simple
+} // end namespace chunkware_simple
